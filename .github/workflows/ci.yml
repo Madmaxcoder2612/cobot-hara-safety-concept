@@ -21,6 +21,9 @@ jobs:
       - name: Traceability check (fails on any gap in the chain)
         run: python tools/traceability.py
 
+      - name: Generate figures and stopping distance table
+        run: python tools/figures.py
+
       - name: Unit tests
         run: python -m unittest discover tests -v
 

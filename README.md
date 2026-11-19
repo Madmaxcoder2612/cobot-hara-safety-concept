@@ -47,6 +47,16 @@ If a safety function has no hazard behind it, a requirement has no test, or a ta
 | Test cases | 20 (11 test, 5 measurement, 3 inspection, 1 analysis) |
 | Hazards handled without a control safety function | 2 (design and information only) |
 
+## Results at a glance
+
+**Every hazard is covered, and every function is at least as strong as the hazards behind it.** Two hazards need no control function at all, because design and information measures are enough.
+
+![Matrix of hazards against safety functions, coloured by required Performance Level](docs/figures/coverage-matrix.svg)
+
+**A stop is not instant, so the speed limit decides how close the arm may come to a protected zone.** At the 250 mm/s collaborative limit the tool travels about 30 mm after the stop command. At full speed it travels more than 500 mm. The model uses assumed values; see [stopping distance](docs/06-stopping-distance.md).
+
+![Stopping distance against tool speed](docs/figures/stopping-distance.svg)
+
 ## Documents
 
 Read them in this order if the topic is new to you.
@@ -58,8 +68,9 @@ Read them in this order if the topic is new to you.
 | 3 | [HARA table](docs/04-hara-table.md) | Which hazards exist and what PLr does each one need? |
 | 4 | [Safety concept](docs/03-safety-concept.md) | Which safety functions reduce the risk, and what is the safe state? |
 | 5 | [Traceability matrix](docs/05-traceability-matrix.md) | How does each hazard connect to requirements and tests? |
+| 6 | [Stopping distance](docs/06-stopping-distance.md) | How far does the arm travel after a stop command, and what does that mean for the limits? |
 
-The HARA table and traceability matrix are generated from the CSV files in [data/](data/). Edit the data, not the tables.
+The HARA table, traceability matrix, figures and stopping distance table are generated from the CSV files in [data/](data/) and the model in [tools/](tools/). Edit the data, not the generated files.
 
 ## Quick start
 
@@ -83,6 +94,12 @@ Expected output:
 All traceability checks passed.
 ```
 
+Regenerate the figures and the stopping distance table:
+
+```bash
+python tools/figures.py
+```
+
 Run the unit tests, which include every path of the ISO 13849-1 risk graph:
 
 ```bash
@@ -95,6 +112,13 @@ Ask the risk graph directly for the required PL of a single hazard (severity, fr
 python tools/plr.py S2 F1 P2
 ```
 
+Calculate the stopping distance at one speed in m/s, optionally with your own reaction time in s and deceleration in m/s²:
+
+```bash
+python tools/stopping_distance.py 0.25
+python tools/stopping_distance.py 0.25 0.2 4
+```
+
 ## How it works
 
 | File | Role |
@@ -105,6 +129,8 @@ python tools/plr.py S2 F1 P2
 | [data/test_cases.csv](data/test_cases.csv) | Method, procedure and pass criterion, linked to a requirement |
 | [tools/plr.py](tools/plr.py) | The ISO 13849-1 risk graph as code |
 | [tools/traceability.py](tools/traceability.py) | Checks the chain and writes the generated tables |
+| [tools/stopping_distance.py](tools/stopping_distance.py) | Stopping distance and time after a stop command |
+| [tools/figures.py](tools/figures.py) | Draws the SVG figures and writes the stopping distance table |
 
 The checks it performs:
 
@@ -115,7 +141,7 @@ The checks it performs:
 - No safety function has a target PL below the highest PLr of the hazards it covers
 - Every safety function has a requirement, and every requirement has a test case
 
-GitHub Actions runs the check and the tests on every push, and also fails if the generated tables in `docs/` are out of date.
+GitHub Actions runs the check and the tests on every push, and also fails if any generated file in `docs/` is out of date.
 
 ## Repository layout
 
@@ -123,7 +149,8 @@ GitHub Actions runs the check and the tests on every push, and also fails if the
 .
 ├── data/                  CSV source of truth
 ├── docs/                  Method, item definition, safety concept, generated tables
-├── tools/                 Risk graph and traceability check
+│   └── figures/           Generated SVG figures and stopping distance table
+├── tools/                 Risk graph, traceability check, stopping distance model, figures
 ├── tests/                 Unit tests
 └── .github/workflows/     CI
 ```
@@ -147,6 +174,7 @@ The standards themselves are copyrighted and are not included here.
 - **Fictional cell, no real measurements.** Test cases describe what would be measured; none has been run.
 - **Unverified numbers.** The 140 N force limit, the 250 mm/s speed limit and the PL d / category 3 default are listed as assumptions in the [item definition](docs/01-item-definition.md) and need checking against the standards.
 - **ISO 10218:2025 not compared clause by clause.** Listed as an open point.
+- **Simple stopping model.** Constant deceleration with an assumed reaction time and rate (A-8). Real values come from the robot manufacturer's data and measurement.
 - **Target, not proof.** The concept sets a PL target. Showing that a real design achieves it needs MTTFd, diagnostic coverage and common cause failure analysis.
 - **Not covered:** FMEA and FTA of individual safety functions, speed and separation monitoring, transport, installation and decommissioning.
 
@@ -155,6 +183,7 @@ The standards themselves are copyrighted and are not included here.
 1. Calculate the achieved PL of one safety function from category, MTTFd, DC and CCF.
 2. FMEA and FTA of the Safe Torque Off function.
 3. Safety logic for the emergency stop and safely limited speed in IEC 61131-3 Structured Text.
+4. A Simulink or Stateflow model of the emergency stop and safe standstill logic.
 
 ## License
 

@@ -64,6 +64,7 @@ Every number that the analysis depends on but that could not be measured is list
 | A-5 | An upper safety plane at 1.3 m keeps the arm below the head of a standing adult |
 | A-6 | 20 mm of sag on brake engagement cannot trap a hand in this layout |
 | A-7 | A 24 hour brake test interval matches the diagnostic coverage needed for PL d |
+| A-8 | The stop reaction time is 0.10 s and the braking deceleration is 6 m/s². Used in the [stopping distance model](06-stopping-distance.md). Both must come from the manufacturer's data and be confirmed by measurement |
 
 ## Open points
 

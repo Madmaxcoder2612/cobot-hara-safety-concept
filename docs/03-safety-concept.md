@@ -58,6 +58,10 @@ Category 3 for each function means, in principle:
 
 This concept assumes the robot manufacturer supplies these functions as certified functions of the safety controller (assumption A-1). The integrator's job is then to configure them correctly, protect the configuration (SR-08), and validate the result on the real cell.
 
+## Stopping distance
+
+A stop is not instant. At the 250 mm/s speed limit the tool still travels about 30 mm after the stop command, at full speed more than 500 mm. The safety planes of SF-04 must therefore be set back from the head and shoulder zone by at least this distance, which is only possible because SF-03 limits the speed. The calculation is in [06-stopping-distance.md](06-stopping-distance.md).
+
 ## Parameter integrity
 
 Hazard H-12 is the one that is easiest to overlook. Every limit in this concept is a number someone types into the safety configuration. If the payload is entered as 2 kg when it is 6 kg, force estimation is wrong and SF-02 no longer protects anyone, even though every component works.

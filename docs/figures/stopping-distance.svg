@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" width="760" height="450" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d"><title id="t">Stopping distance against tool speed</title><desc id="d">Line chart of the distance the robot tool travels after a stop command for tool speeds from 0 to 2.0 metres per second, with the collaborative speed limit marked.</desc><rect width="760" height="450" fill="#ffffff"/>
+<text x="84" y="30" font-size="18" text-anchor="start" font-weight="bold" fill="#1f2933" >Stopping distance grows faster than speed</text>
+<text x="84" y="50" font-size="12" text-anchor="start" font-weight="normal" fill="#6b7785" >Distance travelled by the tool after the stop command</text>
+<line x1="84" y1="366.0" x2="720" y2="366.0" stroke="#e3e8ee"/>
+<text x="74" y="370.0" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >0</text>
+<line x1="84" y1="315.7" x2="720" y2="315.7" stroke="#e3e8ee"/>
+<text x="74" y="319.6666666666667" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >100</text>
+<line x1="84" y1="265.3" x2="720" y2="265.3" stroke="#e3e8ee"/>
+<text x="74" y="269.3333333333333" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >200</text>
+<line x1="84" y1="215.0" x2="720" y2="215.0" stroke="#e3e8ee"/>
+<text x="74" y="219.0" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >300</text>
+<line x1="84" y1="164.7" x2="720" y2="164.7" stroke="#e3e8ee"/>
+<text x="74" y="168.66666666666666" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >400</text>
+<line x1="84" y1="114.3" x2="720" y2="114.3" stroke="#e3e8ee"/>
+<text x="74" y="118.33333333333331" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >500</text>
+<line x1="84" y1="64.0" x2="720" y2="64.0" stroke="#e3e8ee"/>
+<text x="74" y="68.0" font-size="12" text-anchor="end" font-weight="normal" fill="#6b7785" >600</text>
+<line x1="84.0" y1="366" x2="84.0" y2="371" stroke="#6b7785"/>
+<text x="84.0" y="388" font-size="12" text-anchor="middle" font-weight="normal" fill="#6b7785" >0.0</text>
+<line x1="243.0" y1="366" x2="243.0" y2="371" stroke="#6b7785"/>
+<text x="243.0" y="388" font-size="12" text-anchor="middle" font-weight="normal" fill="#6b7785" >0.5</text>
+<line x1="402.0" y1="366" x2="402.0" y2="371" stroke="#6b7785"/>
+<text x="402.0" y="388" font-size="12" text-anchor="middle" font-weight="normal" fill="#6b7785" >1.0</text>
+<line x1="561.0" y1="366" x2="561.0" y2="371" stroke="#6b7785"/>
+<text x="561.0" y="388" font-size="12" text-anchor="middle" font-weight="normal" fill="#6b7785" >1.5</text>
+<line x1="720.0" y1="366" x2="720.0" y2="371" stroke="#6b7785"/>
+<text x="720.0" y="388" font-size="12" text-anchor="middle" font-weight="normal" fill="#6b7785" >2.0</text>
+<line x1="84" y1="366" x2="720" y2="366" stroke="#6b7785"/>
+<line x1="84" y1="64" x2="84" y2="366" stroke="#6b7785"/>
+<text x="402.0" y="414" font-size="13" text-anchor="middle" font-weight="normal" fill="#1f2933" >Tool speed [m/s]</text>
+<text x="22" y="215.0" font-size="13" text-anchor="middle" font-weight="normal" fill="#1f2933" transform="rotate(-90 22 215.0)">Stopping distance [mm]</text>
+<line x1="163.5" y1="64" x2="163.5" y2="366" stroke="#2a6db0" stroke-dasharray="5 4"/>
+<polyline points="84.0,366.0 90.4,365.0 96.7,363.9 103.1,362.8 109.4,361.7 115.8,360.5 122.2,359.4 128.5,358.1 134.9,356.9 141.2,355.6 147.6,354.3 154.0,352.9 160.3,351.5 166.7,350.1 173.0,348.6 179.4,347.1 185.8,345.6 192.1,344.0 198.5,342.4 204.8,340.8 211.2,339.2 217.6,337.5 223.9,335.7 230.3,334.0 236.6,332.2 243.0,330.3 249.4,328.5 255.7,326.6 262.1,324.7 268.4,322.7 274.8,320.7 281.2,318.7 287.5,316.6 293.9,314.5 300.2,312.4 306.6,310.2 313.0,308.0 319.3,305.8 325.7,303.5 332.0,301.2 338.4,298.9 344.8,296.5 351.1,294.1 357.5,291.7 363.8,289.2 370.2,286.7 376.6,284.2 382.9,281.6 389.3,279.0 395.6,276.4 402.0,273.7 408.4,271.0 414.7,268.3 421.1,265.5 427.4,262.7 433.8,259.9 440.2,257.0 446.5,254.1 452.9,251.2 459.2,248.2 465.6,245.2 472.0,242.2 478.3,239.1 484.7,236.0 491.0,232.9 497.4,229.7 503.8,226.5 510.1,223.2 516.5,220.0 522.8,216.7 529.2,213.3 535.6,209.9 541.9,206.5 548.3,203.1 554.6,199.6 561.0,196.1 567.4,192.6 573.7,189.0 580.1,185.4 586.4,181.8 592.8,178.1 599.2,174.4 605.5,170.6 611.9,166.9 618.2,163.1 624.6,159.2 631.0,155.3 637.3,151.4 643.7,147.5 650.0,143.5 656.4,139.5 662.8,135.5 669.1,131.4 675.5,127.3 681.8,123.1 688.2,118.9 694.6,114.7 700.9,110.5 707.3,106.2 713.6,101.9 720.0,97.6" fill="none" stroke="#14406e" stroke-width="3"/>
+<circle cx="163.5" cy="350.8" r="5" fill="#2a6db0"/>
+<text x="171.5" y="80" font-size="12" text-anchor="start" font-weight="bold" fill="#1f2933" >250 mm/s (collaborative limit)</text>
+<text x="175.5" y="370.7951388888889" font-size="12" text-anchor="start" font-weight="normal" fill="#1f2933" >30 mm</text>
+<circle cx="720.0" cy="97.6" r="5" fill="#2a6db0"/>
+<text x="708.0" y="75.55555555555554" font-size="12" text-anchor="end" font-weight="bold" fill="#1f2933" >2 m/s (full speed)</text>
+<text x="708.0" y="91.55555555555554" font-size="12" text-anchor="end" font-weight="normal" fill="#1f2933" >533 mm</text>
+<text x="84" y="438" font-size="11" text-anchor="start" font-weight="normal" fill="#6b7785" >Model: reaction time 0.1 s, constant deceleration 6.0 m/s². Assumed values, not measured.</text>
+</svg>

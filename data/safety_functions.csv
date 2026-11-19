@@ -1,0 +1,8 @@
+id,name,trigger,reaction,safe_state,pl_target,category
+SF-01,Emergency stop,Any emergency stop device is pressed,"Stop category 1: controlled braking, then torque removed (SS1 then STO)","All joints at standstill, torque off, brakes applied",d,3
+SF-02,Power and force limiting (PFL),Measured contact force or joint torque exceeds the configured limit,"Protective stop, then the arm can be pushed away by hand","Standstill, no clamping force held",d,3
+SF-03,Safely limited speed (SLS),Tool centre point speed exceeds the configured limit,Protective stop,Standstill with standstill monitoring,d,3
+SF-04,Safely limited position (SLP),A monitored point of the arm approaches a configured safety plane,Protective stop before the plane is crossed,Standstill inside the allowed workspace,d,3
+SF-05,Safe standstill and prevention of unexpected start-up,Robot is paused and any joint moves beyond the standstill tolerance,Torque removed immediately (STO),"Torque off, brakes applied",d,3
+SF-06,Enabling device in manual mode,Three-position enabling device is released or pressed fully,Protective stop,Standstill with standstill monitoring,d,3
+SF-07,Safe brake control and brake test,Torque is removed or power is lost; cyclic brake test fails,Brakes applied on all joints; operation blocked after a failed test,Arm held by brakes,d,3

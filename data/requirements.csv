@@ -1,0 +1,21 @@
+id,safety_function,type,text
+SR-01,SF-01,Functional,"When any emergency stop device is actuated, the robot shall perform a category 1 stop: controlled deceleration followed by removal of torque (STO)."
+SR-02,SF-01,Functional,The emergency stop shall be effective in every operating mode and shall take priority over all other functions.
+SR-03,SF-01,Functional,Resetting the emergency stop device shall not restart motion. A separate deliberate start command shall be required.
+SR-04,SF-01,Timing,STO shall be reached within 500 ms of actuation of the emergency stop device (assumption A-3).
+SR-05,SF-02,Functional,The control system shall limit quasi-static contact force at the tool and arm to 140 N or less (assumption A-2).
+SR-06,SF-02,Functional,"When the force limit is exceeded, the robot shall perform a protective stop."
+SR-07,SF-02,Functional,"After a force-triggered stop, the robot shall not hold a clamping force. A trapped person shall be able to push the arm away by hand."
+SR-08,SF-02,Integrity,"Safety parameters (payload, tool data, force, speed and position limits) shall be protected by password and checksum. The checksum shall be displayed so that it can be compared with the validated value."
+SR-09,SF-03,Functional,The tool centre point speed shall be monitored and limited to 250 mm/s or less inside the collaborative workspace (assumption A-4).
+SR-10,SF-03,Functional,"When the speed limit is exceeded, the robot shall perform a protective stop."
+SR-11,SF-04,Functional,"The tool, elbow and wrist shall be kept inside the configured safety planes. No part of the arm or tool shall rise more than 1.3 m above the floor (assumption A-5)."
+SR-12,SF-04,Functional,"The robot shall stop before any monitored point crosses a safety plane, taking its stopping distance into account."
+SR-13,SF-05,Functional,"While the robot is paused, the standstill of every joint shall be monitored."
+SR-14,SF-05,Functional,"If any joint moves beyond the standstill tolerance while paused, torque shall be removed immediately (STO)."
+SR-15,SF-05,Functional,Motion shall resume from the paused state only after a deliberate operator action at the control station.
+SR-16,SF-06,Functional,"In manual mode, motion shall be possible only while the three-position enabling device is held in its centre position. Releasing it or pressing it fully shall cause a protective stop."
+SR-17,SF-06,Functional,"In manual mode, the tool centre point speed shall be limited to 250 mm/s or less."
+SR-18,SF-07,Functional,"When torque is removed or power is lost, the brakes shall be applied on all joints and the tool shall not sag more than 20 mm (assumption A-6)."
+SR-19,SF-07,Functional,"A brake test shall run automatically at least once every 24 hours of operation (assumption A-7). After a failed test, automatic operation shall be blocked."
+SR-20,ALL,Integrity,"Every safety function shall achieve PL d with a category 3 architecture according to ISO 13849-1: a single fault shall not lead to loss of the safety function, and the fault shall be detected at or before the next demand where reasonably practicable."

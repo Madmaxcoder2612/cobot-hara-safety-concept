@@ -1,0 +1,21 @@
+id,requirement,method,procedure,pass_criterion
+TC-01,SR-01,Test,Press each emergency stop device during automatic motion at full programmed speed and record the drive status.,"Arm decelerates on its path, then torque is removed. Repeated for every device."
+TC-02,SR-02,Test,"Press the emergency stop in automatic, manual and paused state.",Stop occurs in every mode and no other command can override it.
+TC-03,SR-03,Test,Release the emergency stop device after a stop and wait 60 s without pressing start.,No motion until a separate start command is given.
+TC-04,SR-04,Measurement,Record the emergency stop input and the STO status signal with an oscilloscope or drive trace at maximum speed and payload. Repeat 10 times.,Longest time from input to STO is 500 ms or less.
+TC-05,SR-05,Measurement,Measure contact force with a calibrated force and pressure measuring device at the clamping points identified in H-02 and H-03. Repeat 10 times per point.,Highest quasi-static force is 140 N or less at every point.
+TC-06,SR-06,Test,Block the arm with the measuring device during programmed motion.,Robot performs a protective stop and reports a force limit violation.
+TC-07,SR-07,Test,"After the stop in TC-06, push the arm away from the measuring device by hand.",Residual force drops below 20 N within 1 s and the arm can be moved away by hand.
+TC-08,SR-08,Inspection,Change the payload value without the password. Then change it with the password and read the checksum.,Change is refused without the password. Checksum changes after the authorised change.
+TC-09,SR-09,Measurement,Command a path at 400 mm/s inside the collaborative workspace and record the tool speed.,Recorded tool speed never exceeds 250 mm/s.
+TC-10,SR-10,Test,Inject a speed above the limit using the manufacturer's validation function or a modified test program.,Robot performs a protective stop and reports a speed limit violation.
+TC-11,SR-11,Inspection,Compare the configured safety planes with the layout drawing and measure the upper plane height on the real cell.,Planes match the drawing. Upper plane is at 1.3 m or lower.
+TC-12,SR-12,Test,Program a path through each safety plane at maximum speed and payload and mark the stop position.,No monitored point passes the plane in any run.
+TC-13,SR-13,Inspection,Pause the robot and read the standstill monitoring status of every joint in the safety controller.,Standstill monitoring is active for all joints.
+TC-14,SR-14,Test,"With the robot paused, push a joint by hand beyond the standstill tolerance.",Torque is removed and brakes apply. A standstill violation is reported.
+TC-15,SR-15,Test,Pause the robot and try to resume by removing the obstruction only.,Motion resumes only after the resume button at the control station is pressed.
+TC-16,SR-16,Test,"In manual mode, jog the arm and release the enabling device. Repeat with the device pressed fully.",Protective stop in both cases. No motion is possible without the centre position.
+TC-17,SR-17,Measurement,"In manual mode, command the highest jog speed and record the tool speed.",Recorded tool speed never exceeds 250 mm/s.
+TC-18,SR-18,Measurement,Switch off mains power with maximum payload in the most unfavourable pose and measure tool sag.,Sag is 20 mm or less.
+TC-19,SR-19,Test,Run the cell for 24 hours and check the log. Then simulate a failed brake test.,Brake test is logged within 24 hours. Automatic operation is blocked after the failed test.
+TC-20,SR-20,Analysis,"Calculate the achieved PL of each safety function from category, MTTFd, DCavg and CCF (planned as project 02, using SISTEMA or an own calculator).",Achieved PL is d or higher for every safety function.

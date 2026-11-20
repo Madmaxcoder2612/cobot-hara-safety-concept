@@ -60,4 +60,4 @@ A PL is a band of **probability of dangerous failure per hour**. PL d means betw
 - **DC:** diagnostic coverage, the share of dangerous faults that are detected.
 - **CCF:** measures against common cause failures that would defeat both channels at once.
 
-This project stops at setting the target. Calculating the achieved PL is the next project.
+This document stops at setting the target. How failure rates of the parts add up to an achieved PL is shown in [Achieved PL](07-achieved-pl.md).
